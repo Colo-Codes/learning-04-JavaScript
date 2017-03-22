@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My first JavaScript</title>
+</head>
+<body>
+	<!-- HTML element: button -->
+	<p id="text">Hello world!</p>
+    <button id="myButton">Change text!</button>
+    <p id="secondParagraph">Javascript is ... </p>
+    <button id="myButton2">Append text</button>
+    <p id="hokusPokus"></p>
+    <button id="myButton3">Appear text!</button>
+    
+	<script type="text/javascript">
+		//alert("The site is loaded!");
+		document.getElementById('text').innerHTML = "Hello moon!";
+        
+        document.getElementById('myButton').onclick = function() {
+            //alert("Button clicked!");
+            document.getElementById("text").innerHTML = "Button clicked!";
+        }
+        
+        document.getElementById('myButton2').onclick = function() {
+            document.getElementById("secondParagraph").innerHTML = "I thonk " + document.getElementById("secondParagraph").innerHTML + "awesome!";
+        }
+        
+        document.getElementById('myButton3').onclick = function() {
+            document.getElementById("hokusPokus").innerHTML = "Hokus Pokus !!";
+        }
+	</script>
+</body>
+</html>
