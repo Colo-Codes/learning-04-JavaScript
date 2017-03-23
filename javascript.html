@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
 	<title>My first JavaScript</title>
@@ -12,6 +11,10 @@
     <button id="myButton2">Append text</button>
     <p id="hokusPokus"></p>
     <button id="myButton3">Appear text!</button>
+    <p id="moreText">More text...</p>
+    <button id="style">StyleUp!</button>
+    <p id="disapear">Now you see it...</p>
+    <button id="styleDisapear">Hide text!</button>
     
 	<script type="text/javascript">
 		//alert("The site is loaded!");
@@ -28,6 +31,15 @@
         
         document.getElementById('myButton3').onclick = function() {
             document.getElementById("hokusPokus").innerHTML = "Hokus Pokus !!";
+        }
+        
+        document.getElementById('style').onclick = function() {
+            document.getElementById("moreText").style.color = "red";
+            document.getElementById("moreText").style.fontSize = "130%";
+        }
+        
+        document.getElementById('styleDisapear').onclick = function() {
+            document.getElementById("disapear").style.display = "none";
         }
 	</script>
 </body>
