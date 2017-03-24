@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - Variables and more</title>
+</head>
+
+<body>
+
+  <input type="text" id="entrada">
+  <button id="buttonChange">Change the text!</button>
+
+  <p id="paragraph">This is some text...</p>
+  <script type="text/javascript">
+    //var x = 5;
+    //x = 15;
+    //var name = "Damian";
+    //alert(x);
+    //alert(name);
+
+    //-------------------//
+    document.getElementById("buttonChange").onclick = function() {
+      //alert("You have clicked me!");
+      var textoEntrada = "";
+      textoEntrada = document.getElementById("entrada").value;
+      //alert(textoEntrada);
+      document.getElementById("paragraph").innerHTML = textoEntrada;
+    }
+
+  </script>
+</body>
+
+</html>
