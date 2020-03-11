@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My first JavaScript</title>
+  <style type="text/css">
+    #red, #green, #blue {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      /*float: left;*/
+      margin: 10px;
+    }
+    #red {
+      background-color: red;
+    }
+    #green {
+      background-color: green;
+    }
+    #blue {
+      background-color: blue;
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="red"></div>
+  <div id="green"></div>
+  <div id="blue"></div>
+  
+  
+  
+    <!-- HTML element: button -->
+	<p id="text">Hello world!</p>
+    <button id="myButton">Change text!</button>
+    <p id="secondParagraph">Javascript is ... </p>
+    <button id="myButton2">Append text</button>
+    <p id="hokusPokus"></p>
+    <button id="myButton3">Appear text!</button>
+    <p id="moreText">More text...</p>
+    <button id="style">StyleUp!</button>
+    <p id="disapear">Now you see it...</p>
+    <button id="styleDisapear">Hide text!</button>
+    
+	<script type="text/javascript">
+		//alert("The site is loaded!");
+		document.getElementById('text').innerHTML = "Hello moon!";
+        
+        document.getElementById('myButton').onclick = function() {
+            //alert("Button clicked!");
+            document.getElementById("text").innerHTML = "Button clicked!";
+        }
+        
+        document.getElementById('myButton2').onclick = function() {
+            document.getElementById("secondParagraph").innerHTML = "I thonk " + document.getElementById("secondParagraph").innerHTML + "awesome!";
+        }
+        
+        document.getElementById('myButton3').onclick = function() {
+            document.getElementById("hokusPokus").innerHTML = "Hokus Pokus !!";
+        }
+        
+        document.getElementById('style').onclick = function() {
+            document.getElementById("moreText").style.color = "red";
+            document.getElementById("moreText").style.fontSize = "130%";
+        }
+        
+        document.getElementById('styleDisapear').onclick = function() {
+            document.getElementById("disapear").style.display = "none";
+        }
+        // ---------------------- //
+        document.getElementById('red').onclick = function() {
+            document.getElementById("red").style.display = "none";
+        }
+        document.getElementById('blue').onclick = function() {
+            document.getElementById("blue").style.display = "none";
+        }
+        document.getElementById('green').onclick = function() {
+            document.getElementById("green").style.display = "none";
+        }
+        
+	</script>
+</body>
+</html>
