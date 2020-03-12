@@ -5,7 +5,6 @@ var paragraph = document.querySelector('p');
 var ul = document.querySelector('ul');
 var olLi = document.querySelectorAll('ol li');
 var buttonBackgnd = document.querySelector('#buttonBackgnd');
-var body = document.querySelector('body');
 
 // Click listener on button:
 button.addEventListener('click', function () {
@@ -37,12 +36,26 @@ for (i = 0; i < olLi.length; i++) {
     olLi[i].addEventListener('click', changetext);
 }
 
-// Click listener on last button
+// Click listener on last button:
 buttonBackgnd.addEventListener('click', function(){
     // Toggle logic:
-    if (body.style.background == 'red') {
-        body.style.background = 'orange';
+    if (document.body.style.background == 'red') {
+        document.body.style.background = 'orange';
     } else {
-        body.style.background = 'red';
+        document.body.style.background = 'red';
     }
+    // I could define the if statement like this:
+    // var isRed = false;
+    // if (isRed === true) {
+    //     document.body.style.background == 'orange';
+    // } else {
+    //     document.body.style.background == 'red';
+    // }
+    // isRed = !isRed;
 });
+// If we want a variable to take the contrary falue (boolean), we can use: variable = !variable.
+
+// IMPORTANT: Another way to toggle between two states is to make use of the toggle method of the class list:
+// buttonBackgnd.addEventListener('click', function(){
+//     document.body.classList.toggle('red');
+// });
