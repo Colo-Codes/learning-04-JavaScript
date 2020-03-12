@@ -12,5 +12,10 @@ button.addEventListener('click', function(){
 
 // Click listener on ul:
 ul.addEventListener('click', function(){
-    ul.style.color = 'red';
+    // Toggle logic:
+    if (ul.style.color == 'red') {
+        ul.style.color = 'blue';
+    } else {
+        ul.style.color = 'red';
+    }
 });
