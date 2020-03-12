@@ -11,7 +11,7 @@ button.addEventListener('click', function () {
 });
 // If I create another listener targetting the same element, it will also apply.
 
-// Click listener on ul:
+// Click listener on <ul>:
 ul.addEventListener('click', function () {
     // Toggle logic:
     if (ul.style.color == 'red') {
@@ -21,7 +21,7 @@ ul.addEventListener('click', function () {
     }
 });
 
-// Click listener on ol li (not using an anonymous function):
+// Click listener on <ol> <li> (not using an anonymous function):
 function changetext() {
     // Toggle logic:
     if (this.style.color == 'green') {
