@@ -2,7 +2,7 @@
 
 var button = document.querySelector('button');
 var paragraph = document.querySelector('p');
-var ul = document.querySelector(ul);
+var ul = document.querySelector('ul');
 
 // Click listener on button:
 button.addEventListener('click', function(){
@@ -11,6 +11,6 @@ button.addEventListener('click', function(){
 // If I create another listener targetting the same element, it will also apply.
 
 // Click listener on ul:
-ul.addEventListener('click',function(){
+ul.addEventListener('click', function(){
     ul.style.color = 'red';
 });
