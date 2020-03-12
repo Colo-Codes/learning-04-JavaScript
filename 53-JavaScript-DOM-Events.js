@@ -4,6 +4,8 @@ var button = document.querySelector('button');
 var paragraph = document.querySelector('p');
 var ul = document.querySelector('ul');
 var olLi = document.querySelectorAll('ol li');
+var buttonBackgnd = document.querySelector('#buttonBackgnd');
+var body = document.querySelector('body');
 
 // Click listener on button:
 button.addEventListener('click', function () {
@@ -34,3 +36,13 @@ function changetext() {
 for (i = 0; i < olLi.length; i++) {
     olLi[i].addEventListener('click', changetext);
 }
+
+// Click listener on last button
+buttonBackgnd.addEventListener('click', function(){
+    // Toggle logic:
+    if (body.style.background == 'red') {
+        body.style.background = 'orange';
+    } else {
+        body.style.background = 'red';
+    }
+});
