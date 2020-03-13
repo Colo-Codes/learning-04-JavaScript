@@ -1,12 +1,15 @@
 // console.log('Connected...');
 
 // Variables:
-var colours = coloursArrayRandom(6);
+var numOfSquares = 6;
+var colours = coloursArrayRandom(numOfSquares);
 var squares = document.querySelectorAll('.square'); // REMEMBER: This is an array
 var pickedColour = randomPositionColour();
 var messageDisplay = document.getElementById('message');
 var gameHeading = document.querySelector('#gameHeading');
 var resetButton = document.querySelector('#resetButton');
+var buttonEasy = document.querySelector('#buttonEasy');
+var buttonHard = document.querySelector('#buttonHard');
 
 // Picked colour:
 document.querySelector('#pickedColour').textContent = pickedColour;
@@ -18,7 +21,7 @@ resetButton.addEventListener('click', function() {
     // Reset button
     resetButton.textContent = "New Colours";
     // Generate new colours
-    colours = coloursArrayRandom(6);
+    colours = coloursArrayRandom(numOfSquares);
     // Pick a new random colour from array
     pickedColour = randomPositionColour();
     // Change picked colour
@@ -26,6 +29,37 @@ resetButton.addEventListener('click', function() {
     // Load new colours into squares
     for (var i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = colours[i]; // Using "backgroundColor" because is compatible with more browsers.
+    }
+});
+
+// Difficulty
+buttonEasy.addEventListener('click', function() {
+    buttonEasy.classList.add('selected');
+    buttonHard.classList.remove('selected');
+    // Generate 3 new colours
+    numOfSquares = 3;
+    colours = coloursArrayRandom(numOfSquares);
+    pickedColour = randomPositionColour();
+    document.querySelector('#pickedColour').textContent = pickedColour;
+    for (var i = 0; i < squares.length; i++) {
+        if (colours[i]) {
+            squares[i].style.backgroundColor = colours[i];
+        } else {
+            squares[i].style.display = 'none';
+        }
+    }
+});
+buttonHard.addEventListener('click', function() {
+    buttonHard.classList.add('selected');
+    buttonEasy.classList.remove('selected');
+    // Generate 6 new colours
+    numOfSquares = 6;
+    colours = coloursArrayRandom(numOfSquares);
+    pickedColour = randomPositionColour();
+    document.querySelector('#pickedColour').textContent = pickedColour;
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = colours[i];
+        squares[i].style.display = 'block';
     }
 });
 
