@@ -1,0 +1,19 @@
+body {
+    background: #232323;
+}
+h1, h2, span {
+    color: white;
+}
+
+.square {
+    width: 30%;
+    /* background: darkgreen; */
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+}
+
+#squaresContainer {
+    margin: 0 auto;
+    max-width: 600px;
+}
