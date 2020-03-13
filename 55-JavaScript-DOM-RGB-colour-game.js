@@ -6,9 +6,28 @@ var squares = document.querySelectorAll('.square'); // REMEMBER: This is an arra
 var pickedColour = randomPositionColour();
 var messageDisplay = document.getElementById('message');
 var gameHeading = document.querySelector('#gameHeading');
+var resetButton = document.querySelector('#resetButton');
 
 // Picked colour:
 document.querySelector('#pickedColour').textContent = pickedColour;
+
+// Reset:
+resetButton.addEventListener('click', function() {
+    // Reset header colour
+    gameHeading.style.backgroundColor = document.body.style.backgroundColor;
+    // Reset button
+    resetButton.textContent = "New Colours";
+    // Generate new colours
+    colours = coloursArrayRandom(6);
+    // Pick a new random colour from array
+    pickedColour = randomPositionColour();
+    // Change picked colour
+    document.querySelector('#pickedColour').textContent = pickedColour;
+    // Load new colours into squares
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = colours[i]; // Using "backgroundColor" because is compatible with more browsers.
+    }
+});
 
 // Squares:
 for (var i = 0; i < squares.length; i++) {
@@ -24,6 +43,7 @@ for (var i = 0; i < squares.length; i++) {
             messageDisplay.textContent = "Correct!";
             changeColours(clickedColour);
             gameHeading.style.backgroundColor = clickedColour;
+            resetButton.textContent = "Play again!";
         } else {
             this.style.backgroundColor = document.body.style.backgroundColor;
             messageDisplay.textContent = "Wrong, try again!";

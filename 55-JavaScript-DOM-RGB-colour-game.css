@@ -1,7 +1,7 @@
 body {
     background: #232323;
 }
-h1, h2, span {
+h1, h2 {
     color: white;
 }
 
@@ -16,4 +16,12 @@ h1, h2, span {
 #squaresContainer {
     margin: 0 auto;
     max-width: 600px;
+}
+#stripe {
+    text-align: center;
+    background: white;
+    height: 30px;
+}
+#pickedColour {
+    color: white;
 }
