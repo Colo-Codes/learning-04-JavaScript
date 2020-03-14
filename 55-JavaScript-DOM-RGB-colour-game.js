@@ -15,10 +15,51 @@ document.querySelector('#pickedColour').textContent = pickedColour;
 
 // Reset:
 resetButton.addEventListener('click', function() {
+    // // Reset header colour
+    // gameHeading.style.backgroundColor = document.body.style.backgroundColor;
+    // // Reset button
+    // this.textContent = "New Colours";
+    // // Generate new colours
+    // colours = coloursArrayRandom(numOfSquares);
+    // // Pick a new random colour from array
+    // pickedColour = randomPositionColour();
+    // // Change picked colour
+    // document.querySelector('#pickedColour').textContent = pickedColour;
+    // // Load new colours into squares
+    // for (var i = 0; i < squares.length; i++) {
+    //     squares[i].style.backgroundColor = colours[i]; // Using "backgroundColor" because is compatible with more browsers.
+    // }
+    // // Message
+    // messageDisplay.textContent = "";
+    reset();
+});
+
+// Difficulty
+for (var i = 0; i < buttonMode.length; i++) {
+    buttonMode[i].addEventListener('click', function() {
+        // I can't use a forEach because buttonMode is a Node, not an array
+        for (var i = 0; i < buttonMode.length; i++) {
+            buttonMode[i].classList.remove('selected');
+        }
+        this.classList.add('selected');
+        
+        // if (this.textContent === 'Easy') {
+        //     numOfSquares = 3;
+        // } else {
+        //     numOfSquares = 6;
+        // }
+        // Equivalent to the if statement, called "ternary operator":
+        this.textContent === 'Easy' ? numOfSquares = 3: numOfSquares = 6;
+        reset();
+    });
+}
+
+
+function reset (numberOfColours) {
     // Reset header colour
     gameHeading.style.backgroundColor = document.body.style.backgroundColor;
     // Reset button
-    this.textContent = "New Colours";
+    resetButton.textContent = "New Colours";
     // Generate new colours
     colours = coloursArrayRandom(numOfSquares);
     // Pick a new random colour from array
@@ -27,22 +68,16 @@ resetButton.addEventListener('click', function() {
     document.querySelector('#pickedColour').textContent = pickedColour;
     // Load new colours into squares
     for (var i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = colours[i]; // Using "backgroundColor" because is compatible with more browsers.
+        if (colours[i]) {
+            squares[i].style.display = 'block';
+            squares[i].style.backgroundColor = colours[i]; // Using "backgroundColor" because is compatible with more browsers.
+        } else {
+            squares[i].style.display = 'none';
+        }
     }
     // Message
     messageDisplay.textContent = "";
-});
-
-// Difficulty
-for (var i = 0; i < buttonMode.length; i++) {
-    buttonMode[i].addEventListener('click', function() {
-        buttonMode.forEach(function () {
-            this.classList.remove('selected');
-        })
-        this.classList.add('selected');
-    });
 }
-
 
 // buttonEasy.addEventListener('click', function() {
 //     buttonEasy.classList.add('selected');
