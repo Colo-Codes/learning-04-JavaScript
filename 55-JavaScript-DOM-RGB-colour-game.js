@@ -10,6 +10,7 @@ var gameHeading = document.querySelector('#gameHeading');
 var resetButton = document.querySelector('#resetButton');
 var buttonEasy = document.querySelector('#buttonEasy');
 var buttonHard = document.querySelector('#buttonHard');
+buttonHard.classList.add('selected');
 
 // Picked colour:
 document.querySelector('#pickedColour').textContent = pickedColour;

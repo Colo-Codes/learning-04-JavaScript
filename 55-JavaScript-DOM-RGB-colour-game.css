@@ -1,8 +1,33 @@
 body {
     background: #232323;
+    margin: 0;
+    font-family: "Montserrat", "Avenir";
 }
 h1, h2 {
     color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0;
+    padding: 0 0 20px 0;
+}
+button {
+    text-transform: uppercase;
+    font-family: "Montserrat", "Avenir";
+    font-weight: 700;
+    font-size: inherit;
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    height: 100%;
+    color: steelblue;
+    transition: all 250ms;
+    -webkit-transition: all 250ms; /* Safari support */
+    -moz-transition: all 250ms; /* Firefox support */
+}
+button:hover {
+    color: white;
+    background: steelblue;
 }
 
 .square {
@@ -11,20 +36,35 @@ h1, h2 {
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+    border-radius: 15%;
+    transition: background .5s;
+    -webkit-transition: background .5s; /* Safari support */
+    -moz-transition: background .5s; /* Firefox support */
 }
 .selected {
-    background: #232323;
+    color: white;
+    background: steelblue;
 }
 
+#gameHeading {
+    background: steelblue;
+    margin: 0;
+}
 #squaresContainer {
-    margin: 0 auto;
+    margin: 20px auto;
     max-width: 600px;
 }
 #stripe {
     text-align: center;
+    text-transform: uppercase;
     background: white;
     height: 30px;
 }
 #pickedColour {
     color: white;
+    font-weight: 900;
+}
+#message {
+    display: inline-block;
+    width: 25%;
 }
