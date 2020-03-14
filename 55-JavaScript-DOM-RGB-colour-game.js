@@ -20,7 +20,7 @@ resetButton.addEventListener('click', function() {
     // Reset header colour
     gameHeading.style.backgroundColor = document.body.style.backgroundColor;
     // Reset button
-    resetButton.textContent = "New Colours";
+    this.textContent = "New Colours";
     // Generate new colours
     colours = coloursArrayRandom(numOfSquares);
     // Pick a new random colour from array
@@ -31,12 +31,16 @@ resetButton.addEventListener('click', function() {
     for (var i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = colours[i]; // Using "backgroundColor" because is compatible with more browsers.
     }
+    // Message
+    messageDisplay.textContent = "";
 });
 
 // Difficulty
 buttonEasy.addEventListener('click', function() {
     buttonEasy.classList.add('selected');
     buttonHard.classList.remove('selected');
+    // Message
+    messageDisplay.textContent = "";
     // Generate 3 new colours
     numOfSquares = 3;
     colours = coloursArrayRandom(numOfSquares);
@@ -53,6 +57,8 @@ buttonEasy.addEventListener('click', function() {
 buttonHard.addEventListener('click', function() {
     buttonHard.classList.add('selected');
     buttonEasy.classList.remove('selected');
+    // Message
+    messageDisplay.textContent = "";
     // Generate 6 new colours
     numOfSquares = 6;
     colours = coloursArrayRandom(numOfSquares);
