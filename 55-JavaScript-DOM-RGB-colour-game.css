@@ -18,6 +18,7 @@ button {
     font-size: inherit;
     letter-spacing: 1px;
     border: none;
+    outline: none;
     background: none;
     height: 100%;
     color: steelblue;
