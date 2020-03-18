@@ -2,3 +2,10 @@
 body {
     background: teal;
 } */
+
+#container {
+    /* background: lightgrey; */
+    border: 2px solid lightgrey;
+    width: 350px;
+    margin: 0 auto;
+}
