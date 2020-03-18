@@ -7,20 +7,45 @@
     <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style type="text/css">
-        div {
+        .divOut {
             width: 100px;
             height: 100px;
             background: teal;
-            float: left;
+            /* float: left; */
+            margin: 20px;
+        }
+        .divIn {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            /* float: left; */
+            margin: 20px;
+            display: none;
+        }
+        .divToggle {
+            width: 100px;
+            height: 100px;
+            background: violet;
+            /* float: left; */
             margin: 20px;
         }
     </style>
 </head>
 <body>
-    <button>Animate!</button>
-    <div>Please don't fade me</div>
-    <div>I'm begging you, don't fade me!</div>
-    <div>Help!!!!</div>
+    <button class="buttonOut">Fade Out!</button>
+    <div class="divOut">Please don't fade me</div>
+    <div class="divOut">I'm begging you, don't fade me!</div>
+    <div class="divOut">Help!!!!</div>
+    <hr>
+    <button class="buttonIn">Fade In!</button>
+    <div class="divIn">Hi there!</div>
+    <div class="divIn">Hi there!</div>
+    <div class="divIn">Hi there!</div>
+    <hr>
+    <button class="buttonToggle">Fade Toggle!</button>
+    <div class="divToggle">Toogle me!</div>
+    <div class="divToggle">Toogle me!</div>
+    <div class="divToggle">Toogle me!</div>
     <h5>Open the JS console...</h5>
     <!-- JS -->
     <script src="./60-JavaScript-jQuery-Effects.js"></script>
