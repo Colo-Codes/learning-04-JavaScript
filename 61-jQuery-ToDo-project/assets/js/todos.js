@@ -18,3 +18,11 @@ $('li').click(function(){
     // Instead of using the if statement and logic, we can toggle a class:
     $(this).toggleClass('completed');
 });
+
+// Click on icon to delete to-to
+$('span').click(function(event){
+    $(this).parent().fadeOut(500, function() {
+        $(this).remove(); // The $(this) here is referencing to the $(this).parent() from before (the element on which the fadeOut() is being applied)
+    });
+    event.stopPropagation(); // This is to prevent the Event Bubbling
+});
