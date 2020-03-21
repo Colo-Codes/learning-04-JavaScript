@@ -8,23 +8,72 @@
     <!-- Load the Paper.js library -->
     <script type="text/javascript" src="./assets/lib/paperjs/dist/paper-full.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
-        // Create a Paper.js Path to draw a line into it:
-        var path = new Path();
-        // Give the stroke a color
-        path.strokeColor = 'white';
-        var start = new Point(100, 100);
-        // Move to start and draw a line from there
-        path.moveTo(start);
-        // Note the plus operator on Point objects.
-        // PaperScript does that for us, and much more!
-        path.lineTo(start + [ 100, -50 ]);
-        //////////////////////////////////////
-        // Create a circle shaped path at {x: 80, y: 50}
-        // with a radius of 35:
-        var path = new Path.Circle(new Point(80, 50), 35);
-        project.activeLayer.lastChild.fillColor = 'red';
-        var myCircle = new Path.Circle(new Point(180, 150), 10);
-        myCircle.fillColor = 'blue';
+        // --------------------
+        // Testing the library:
+        // --------------------
+        // // Create a Paper.js Path to draw a line into it:
+        // var path = new Path();
+        // // Give the stroke a color
+        // path.strokeColor = 'white';
+        // var start = new Point(100, 100);
+        // // Move to start and draw a line from there
+        // path.moveTo(start);
+        // // Note the plus operator on Point objects.
+        // // PaperScript does that for us, and much more!
+        // path.lineTo(start + [ 100, -50 ]);
+        // //////////////////////////////////////
+        // // Create a circle shaped path at {x: 80, y: 50}
+        // // with a radius of 35:
+        // var path = new Path.Circle(new Point(80, 50), 35);
+        // project.activeLayer.lastChild.fillColor = 'red';
+        // var myCircle = new Path.Circle(new Point(180, 150), 10);
+        // myCircle.fillColor = 'blue';
+        // -------------------------------
+        // Experimenting with the library:
+        // -------------------------------
+        var topLeft = view.center - [80, 100];
+        var bottomRight = view.center + [80, 100];
+        var tatooineSun1 = new Path.Circle(new Point(topLeft, bottomRight), 200);
+        tatooineSun1.fillColor = {
+            gradient: {
+                stops: ['#FF6542', '#E0CBA8', '#779FA1']
+            },
+            origin: topLeft,
+            destination: bottomRight
+        };
+        var topLeft2 = view.center - [800, 100];
+        var bottomRight2 = view.center + [800, 100];
+        var tatooineSun2 = new Path.Circle(new Point(800, 450), 80);
+        tatooineSun2.fillColor = {
+            gradient: {
+                stops: ['#A3412A', '#8F826B', '#4C6667']
+            },
+            origin: topLeft2,
+            destination: bottomRight2
+        };
+        var xAxis;
+        var yAxis;
+        var planetSize;
+        var colourLetter = ['A', 'B', 'C', 'D', 'E', 'F', ''];
+        function colourNumberI() {
+            return Math.floor((Math.random() * 9) + 1);
+        }
+        function colourLetterI() {
+            var position = Math.floor((Math.random() * 5));
+            return colourLetter[position];
+        }
+        for (i = 0; i < 50; i++) {
+            xAxis = Math.floor((Math.random() * 1000) + 1);
+            yAxis = Math.floor((Math.random() * 1000) + 1);
+            planetSize = Math.floor((Math.random() * 20) + 1);
+            // console.log(colourNumberI());
+            // console.log(position);
+            // console.log(colourLetterI());
+            planets = new Path.Circle(new Point(xAxis, yAxis), planetSize);
+            planets.fillColor = '#' + colourNumberI() + colourLetterI() + colourNumberI() + colourLetterI() + colourNumberI() + colourLetterI();
+            console.log(planets.fillColor);
+            
+        }
     </script>
 </head>
 <body>
