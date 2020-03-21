@@ -39,8 +39,3 @@ $('input[type="text"]').keypress(function(event) {
         console.log('You pressed something different to ENTER...');
     }
 });
-
-// Input toggle
-$('#inputToggler').click(function() {
-    $('input[type="text"]').slideToggle();
-});
