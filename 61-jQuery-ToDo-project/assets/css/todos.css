@@ -3,14 +3,83 @@ body {
     background: teal;
 } */
 
+body {
+    font-family: 'Roboto', sans-serif;
+    /* From https://uigradients.com/#TaranTado */
+    background: #23074d;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cc5333, #23074d);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cc5333, #23074d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+h1 {
+    background: #2980b9;
+    color: white;
+    margin: 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: normal;
+}
+ul {
+    list-style: none; /* Bullet points */
+    margin: 0;
+    padding: 0;
+}
+li {
+    background: white;
+    color: #666;
+    height: 40px;
+    line-height: 40px;
+}
+li:nth-child(2n) { /* This will apply to every other element */
+    background: #f7f7f7;
+}
+input {
+    font-size: 18px;
+    background-color: #f7f7f7;
+    color: #2980b9;
+    width: 100%;
+    padding: 13px 13px 13px 20px;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box; /* Compatibility */
+    -moz-box-sizing: border-box; /* Compatibility */
+}
+input:focus {
+    background: #fff;
+    border: 3px solid #2980b9;
+    outline: none;
+}
+span {
+    background: #e74c3c;
+    height: 40px;
+    width: 0; /* Initial state, hidden */
+    opacity: 0; /* To hide the icon */
+    margin: 0 20px 0 0;
+    text-align: center;
+    color: white;
+    display: inline-block; /* This makes the span fill the parent's space */
+    transition: 0.2s linear; /* Animation */
+}
+li:hover span {
+    width: 40px;
+    opacity: 1;
+}
+
 .completed {
     color: grey;
     text-decoration: line-through;
 }
+.fa-minus-square {
+    float: right;
+    font-size: 18px;
+}
 
 #container {
     /* background: lightgrey; */
-    border: 2px solid lightgrey;
+    /* border: 2px solid lightgrey; */
+    background: #f7f7f7;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     width: 350px;
-    margin: 0 auto;
+    margin: 100px auto;
 }

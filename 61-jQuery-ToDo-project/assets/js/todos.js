@@ -34,7 +34,7 @@ $('input[type="text"]').keypress(function(event) {
         // console.log($(this).val());
         var toDoElement = $(this).val();
         $(this).val('');
-        $('ul').append('<li><span>X</span>' + toDoElement + '</li>');
+        $('ul').append('<li><span><i class="far fa-trash-alt"></i></span>' + toDoElement + '</li>');
     } else {
         console.log('You pressed something different to ENTER...');
     }
