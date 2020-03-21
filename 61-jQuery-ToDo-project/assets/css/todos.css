@@ -12,7 +12,7 @@ body {
 
 }
 h1 {
-    background: #2980b9;
+    background: #452279;
     color: white;
     margin: 0;
     padding: 10px 20px;
@@ -31,12 +31,9 @@ li {
     height: 40px;
     line-height: 40px;
 }
-li:nth-child(2n) { /* This will apply to every other element */
-    background: #f7f7f7;
-}
 input {
     font-size: 18px;
-    background-color: #f7f7f7;
+    background-color: #dfdfdf;
     color: #2980b9;
     width: 100%;
     padding: 13px 13px 13px 20px;
@@ -44,11 +41,6 @@ input {
     box-sizing: border-box;
     -webkit-box-sizing: border-box; /* Compatibility */
     -moz-box-sizing: border-box; /* Compatibility */
-}
-input:focus {
-    background: #fff;
-    border: 3px solid #2980b9;
-    outline: none;
 }
 span {
     background: #e74c3c;
@@ -61,6 +53,15 @@ span {
     display: inline-block; /* This makes the span fill the parent's space */
     transition: 0.2s linear; /* Animation */
 }
+input:focus {
+    background: #fff;
+    border: 2px solid #2980b9;
+    outline: none;
+}
+li:nth-child(2n) { /* This will apply to every other element */
+    background: #f7f7f7;
+}
+
 li:hover span {
     width: 40px;
     opacity: 1;
