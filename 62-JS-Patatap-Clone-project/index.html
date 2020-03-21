@@ -8,13 +8,22 @@
     <!-- Load the Paper.js library -->
     <script type="text/javascript" src="./assets/lib/paperjs/dist/paper-full.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
+        var randomCircles = [];
         function onKeyDown(event) {
             var maxPoint = new Point(Math.floor(view.size.width), Math.floor(view.size.height));
             var randomPoint = Point.random() * maxPoint;
-            new Path.Circle(new Point(randomPoint), 10).fillColor = 'orange';
-            console.log(Math.floor(view.size.height));
-            console.log(Math.floor(view.size.width));
-            
+            var randomCircle = new Path.Circle(randomPoint, 500);
+            randomCircle.fillColor = 'orange';
+            randomCircles.push(randomCircle);
+            console.log(randomCircles);
+        }
+        // Source: http://paperjs.org/tutorials/animation/creating-animations/
+        function onFrame(event) {
+            // The randomCircles array is revised each frame, so the animation can pick up the new circles
+            for(var i = 0; i < randomCircles.length; i++) {
+                randomCircles[i].fillColor.hue += 1;
+                randomCircles[i].scale(0.95);
+            }
         }
     </script>
 </head>
