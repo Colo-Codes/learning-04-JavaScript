@@ -191,6 +191,11 @@
             for(var i = 0; i < randomCircles.length; i++) {
                 randomCircles[i].fillColor.hue += 1;
                 randomCircles[i].scale(0.95);
+                if(randomCircles[i].area < 1){
+                    randomCircles[i].remove(); // Remove the circle from the canvas
+                    randomCircles.splice(i, 1); // Remove the circle from the array
+                    // console.log(randomCircles);
+                }
             }
         }
     </script>
